@@ -1,0 +1,21 @@
+{ "id":"com.openmono.accelbeep"
+, "name":"Accelerometer Squeak"
+, "author":"Kristoffer Andersen"
+, "authorwebsite":"http://developer.openmono.com"
+, "license":"MIT"
+, "headline":"Listen to the built-in accelerometer."
+, "description":
+  [ "This small app lets you tryout Mono built-in accelerometer."
+  , "A squeak is emitted by the buzzer, modulated after the acceleration. Further the acceleration is plotted on a graph."
+  , "The app plots the vertical acceleration."
+  ]
+, "binary":"accelBeep.elf"
+, "sourceurl":"https://github.com/getopenmono/accelbeep"
+, "required":["display","touch", "accelerometer", "buzzer"]
+, "optional":[]
+, "screenshots":
+  [ "accelBeep.png"
+  ]
+, "cover": "accelBeep.png"
+, "kioskapi": 1
+}
