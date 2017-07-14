@@ -6,3 +6,5 @@ mono_project.map
 main.cpp
 *.elf
 sim
+gdb_script
+accelBeep*.png

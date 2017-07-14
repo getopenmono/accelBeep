@@ -13,14 +13,14 @@ using namespace mono::ui;
 
 class AppController : public mono::IApplication {
 
-    Timer tim;
-    Timer graphTim;
+    mono::Timer tim;
+    mono::Timer graphTim;
     TextLabelView accelLbl;
     ButtonView muteBtn, unmuteBtn, startStopBtn;
     IconView muteIcon, unmuteIcon, startStopIcon;
     ::GraphView graph;
     PowerSaver saver;
-    mono::io::RunningAverageFilter<16, int16_t> filter;
+    mono::io::RunningAverageFilter<16> filter;
     int16_t lastVal;
     bool _mute;
     
