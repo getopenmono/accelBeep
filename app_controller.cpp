@@ -41,13 +41,13 @@ AppController::AppController() :
     startStopBtn.setClickCallback(this, &AppController::toggleAccel);
 
     graphTim.setCallback(this, &AppController::paintGraph);
-    graphTim.Start();
+    graphTim.start();
 }
 
 void AppController::sample()
 {
     filter.append(accel->rawXAxis());
-    int16_t x = 128 - filter.value()/8;
+    int16_t x = 128 - ((int16_t)filter.value())/8;
     if (x < 4)
         x = 4;
     
@@ -98,8 +98,8 @@ void AppController::toggleAccel()
     if (accel->IsActive())
     {
         accel->stop();
-        tim.Stop();
-        graphTim.Stop();
+        tim.stop();
+        graphTim.stop();
         mute();
         startStopIcon = IconView(Point(176/2-24/2, 70), playButton24);
         startStopIcon.show();
@@ -107,8 +107,8 @@ void AppController::toggleAccel()
     else
     {
         accel->start();
-        tim.Start();
-        graphTim.Start();
+        tim.start();
+        graphTim.start();
         startStopIcon = IconView(Point(176/2-24/2, 70), pauseSymbol24);
         startStopIcon.show();
     }
@@ -139,7 +139,7 @@ void AppController::unmute()
 void AppController::monoWakeFromReset()
 {
     accel = IApplicationContext::Instance->Accelerometer;
-    tim.Start();
+    tim.start();
     accel->Start();
     filter.clear(0);
     lastVal = 0;
