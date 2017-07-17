@@ -3,7 +3,7 @@
 
 #include <mono.h>
 #include "icon_view.h"
-#include "running_average_filter.h"
+#include "signed_avg_filter.h"
 #include "graph_view.h"
 #include <Ticker.h>
 
@@ -20,7 +20,7 @@ class AppController : public mono::IApplication {
     IconView muteIcon, unmuteIcon, startStopIcon;
     ::GraphView graph;
     PowerSaver saver;
-    mono::io::RunningAverageFilter<16> filter;
+    mono::io::SignedAverageFilter<16> filter;
     int16_t lastVal;
     bool _mute;
     

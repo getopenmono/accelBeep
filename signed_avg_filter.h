@@ -1,13 +1,13 @@
 
-#ifndef running_average_filter_h
-#define running_average_filter_h
+#ifndef signed_average_filter_h
+#define signed_average_filter_h
 
 #include <string.h>
 
 namespace mono { namespace io {
 
-    template <uint16_t Length, typename Type = uint16_t>
-    class RunningAverageFilter
+    template <uint16_t Length, typename Type = int16_t>
+    class SignedAverageFilter
     {
     protected:
         Type filterData[Length];
@@ -16,7 +16,7 @@ namespace mono { namespace io {
 
     public:
 
-        RunningAverageFilter(Type initialValue = 0)
+        SignedAverageFilter(Type initialValue = 0)
         {
             memset(filterData, initialValue, Length*sizeof(Type));
             filterSum = 0;
@@ -75,4 +75,4 @@ namespace mono { namespace io {
     };
 } }
 
-#endif /* running_average_filter_h */
+#endif /* signed_average_filter_h */

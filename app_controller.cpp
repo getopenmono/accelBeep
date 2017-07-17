@@ -1,4 +1,5 @@
 #include "app_controller.h"
+
 #include <icons/mute-24.h>
 #include <icons/speaker-24.h>
 #include <icons/play-button-24.h>
@@ -47,7 +48,7 @@ AppController::AppController() :
 void AppController::sample()
 {
     filter.append(accel->rawXAxis());
-    int16_t x = 128 - ((int16_t)filter.value())/8;
+    int16_t x = 128 - filter.value()/8;
     if (x < 4)
         x = 4;
     
